@@ -1,3 +1,5 @@
+import random
+
 class Pips:
     count = None
 
@@ -43,6 +45,10 @@ class Set:
 
     def add(self, domino):
         self.domino.append(domino)
+
+    def scramble(self):
+            random.shuffle(self.domino)
+
 
 set = Set(6)
 set.print_set()
