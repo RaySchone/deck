@@ -20,6 +20,9 @@ class Domino:
         self.top = top
         self.bottom = bottom
 
+    def __str__(self):
+        return 'top: {}, bottom: {}'.format(self.top.pips.count, self.bottom.pips.count)
+
 
 class Set:
     domino = []
@@ -33,7 +36,13 @@ class Set:
                 bottom_side = Side(Pips(bottom))
                 new_domino = Domino(top_side, bottom_side)
                 self.add(new_domino)
-                print("created: ", top, bottom)
+
+    def print_set(self):
+        for domino in self.domino:
+            print(domino)
 
     def add(self, domino):
         self.domino.append(domino)
+
+set = Set(6)
+set.print_set()
